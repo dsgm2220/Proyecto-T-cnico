@@ -1,0 +1,688 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+body{
+	background-color: rgb(255, 255, 255);
+}
+/*MENU*/
+nav{
+	width: 100%;
+	margin: auto;
+	background-color: rgb(0, 90, 169);
+	font-size: 18px;
+	float:inline-start;
+    border-top: rgb(110, 179, 131) 5px solid;
+    border-bottom: rgb(110, 179, 131) 5px solid;
+}
+
+.menu{
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+    margin-left: 20px;
+}
+.menu > li > a{
+	display: block;
+	padding: 10px 5px;
+	color: rgb(214, 211, 211);
+	text-decoration: none;
+    margin-top: 43px;
+	border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+/*--clase que cambia el menu dependiendo del usuario--*/
+    .menu > li > a.subrayar-cursiva {
+        text-decoration: line-through; /* Aplicar  tachado */
+        font-style: italic; /* Aplicar estilo cursiva */
+    }
+    .menu > li > a.subrayar-cursiva i {
+        text-decoration: line-through; /* Aplicar  tachado */
+        font-style: italic; /* Aplicar estilo cursiva */
+        transition: none;
+    }
+    .menu > li > a.subrayar-cursiva:hover i {
+        transform: none;
+    }
+
+.menu > li >a:hover{
+    color: rgb(255, 255, 255);
+	border-bottom-color: rgb(255, 255, 255);
+	background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.5s ease;
+}
+.menu > li > a i {
+	transition: all 0.3s ease-in-out; 
+}
+.menu > li > a:hover i {
+	transform: scale(1.1);
+}
+.menu-vertical{
+	position: absolute;
+    display: none;
+    list-style: none;
+    width: 230px;
+    background-color: rgba(20, 77, 89, 0.9);
+    color: #fff;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 2;
+}
+.menu li:hover .menu-vertical {
+    display: block;
+}
+
+.menu-vertical li {
+    padding: 5px 0;
+    transition: background-color 0.3s ease;
+}
+
+
+.menu-vertical li:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.menu-vertical a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+/*--clase que cambia el menu dependiendo del usuario--*/
+    .menu-vertical > li > a.subrayar-cursiva {
+        text-decoration: line-through; /* Aplicar  tachado */
+        font-style: italic; /* Aplicar estilo cursiva */
+    }
+    .menu-vertical > li > a.subrayar-cursiva:hover{
+        transform: none;
+        color: rgb(110, 179, 131);
+    }
+    .menu-vertical > li > a.subrayar-cursiva i {
+        text-decoration: line-through; /* Aplicar  tachado */
+        font-style: italic; /* Aplicar estilo cursiva */
+        transition: none;
+    }
+    .menu-vertical > li > a.subrayar-cursiva:hover i {
+        transform: none;
+        color: rgb(110, 179, 131);
+    }
+/*-------------------------Estilos Perfil info------------------------------*/
+
+img{
+    margin: 5px;
+    margin-left: -5px;
+}
+strong{
+    margin-top: 8px;
+	color: white;
+} 
+.profile-container {
+    display: flex;
+    align-items: center;
+	background-color:  rgb(0, 57, 91);
+    border-radius: 20px;
+    padding: 10px;
+	height: 100px;
+	margin-top: 0.7%;
+	max-width: 230px;
+    width: auto;
+}
+
+.user-details {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.profile-image {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px2
+}
+
+.profile-title {
+    margin-top: 5px;
+    color: #cecece;
+}
+
+.logout-link {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.5s;
+    opacity: 0;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 80px;
+    background-color: #b5b5b5;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	width: 150px;
+}
+
+.user-details:hover .logout-link {
+    opacity: 1;
+}
+
+.logout-link:hover {
+    color: white;
+    text-decoration: none;
+    background-color: rgba(20, 77, 89, 0.7);
+}
+/*-------------------------Fin Estilos Perfil info------------------------------*/
+/* FIN CSS MENU*/
+/*MENU MATERIAS Y CURSOS*/
+
+select {
+	outline:0;
+	box-shadow:none;
+	background: #5c6664;
+	flex: 1;
+	padding: 0.5em;
+	color:#fff;
+	cursor:pointer;
+	font-size: 14px;
+    font-family: Arial, sans-serif;     
+    border: 2px solid #ccc; /* Bordes */
+    border-radius: 5px; /* Esquinas redondeadas */
+}
+select:focus {
+    border-color: #007bff; /* Cambiar color del borde cuando está enfocado */
+}
+select::-ms-expand {
+	display: none;
+}
+.select {
+	position: relative;
+	display: flex;
+	width: 11em;
+	height: 2.5em;
+	line-height: 3;
+	background: #5c6664;
+	overflow: hidden;
+	margin: 10px;
+	float: right;
+	margin-right: 20px;
+}
+    #trimestre_Tamaño{
+        width: 11.7em;
+    }
+.select::after {
+	content: '\25BC';
+	position: absolute;
+	top: -4px;
+	right: 0;
+	padding: 0 1em;
+	background: #2b2e2e;
+	cursor:pointer;
+	pointer-events:none;
+	transition:.25s all ease;
+}
+.select:hover::after {
+	color: #23b499;
+}
+option{
+    position:-webkit-sticky;
+	display: flex;
+    font-family: Arial, sans-serif;
+}
+        /* Cambiar el color del texto de la opción seleccionada */
+        select option:checked {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+
+/*----------Estilos para el encabezado--------------- */
+
+.header-contenido {
+    max-width: 1400px;
+    margin: 0 auto;
+	margin-top: 2.5%;
+	margin-bottom: 2%;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    margin-left: -3%;
+}
+
+.page-titulo {
+    font-size: 22px;
+    margin-right: -2%;
+    max-width: 45%;
+    min-width: 40%;
+}
+    .curso-label {
+        color: #2b2e2e;
+    }
+
+    .curso-nombre {
+        color: #06468ac2; 
+        font-weight: bold; /* Hace el texto en negrita */
+}
+.select-contenedor {
+    margin-top: -1.7%;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Establece un espacio de 20px entre los elementos flexibles */
+}
+
+/* Estilos para el botón de búsqueda */
+.buscar-button {
+    display: flex;
+    align-items: center;
+}
+
+.buscarBtn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    margin-left: 10px;
+}
+
+.buscarBtn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse por encima */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra al pasar el mouse por encima */
+}
+
+.buscarBtn:active {
+    transform: scale(0.95); /* Efecto de escala cuando se hace clic */
+}
+
+/* FIN CSS MENU MATERIAS Y CURSOS */
+/* CSS VENTANA EMERGENTE */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999; 
+}
+    .modal-2 {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999; 
+    }
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    width: 80%; 
+    max-width: 500px; 
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.close {
+position: absolute;
+top: 10px;
+right: 10px;
+font-size: 24px;
+color: #555; /* Color del icono de cerrar */
+cursor: pointer;
+transition: color 0.3s ease-in-out; /* Transición para el color del icono */}
+
+.close:hover {
+    color: #f00; /* Cambia el color del icono al pasar el mouse por encima */
+}
+
+#eventoTextarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-size: 16px; /* Tamaño de fuente */
+    font-family: Arial, sans-serif; /* Tipo de fuente */
+}
+
+/* Cambia el color de fondo y el color del texto cuando el textarea está enfocado */
+#eventoTextarea:focus {
+    background-color: #f2f2f2;
+    color: #333;
+    border-color: #007BFF;
+}
+    #desemTextarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none;
+        font-size: 16px; /* Tamaño de fuente */
+        font-family: Arial, sans-serif; /* Tipo de fuente */
+    }
+
+    /* Cambia el color de fondo y el color del texto cuando el textarea está enfocado */
+    #desemTextarea:focus {
+        background-color: #f2f2f2;
+        color: #333;
+        border-color: #007BFF;
+    }
+
+/* Estilo para el botón "Guardar" en el modal */
+#guardarEvento {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 7px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    float: right;
+    transform: scale(1); /* Inicialmente, el botón no tiene escala */
+}
+
+#guardarEvento:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse por encima */     
+}
+    #guardarDesem {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 7px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        float: right;
+        transform: scale(1); /* Inicialmente, el botón no tiene escala */
+    }
+
+    #guardarDesem:hover {
+        background-color: #0056b3;
+        transform: scale(1.05); /* Efecto de escala al pasar el mouse por encima */     
+    }
+
+/* FIN CSS VENTANA EMERGENTE */
+
+/* CSS TABLA DE PLANILLAS  */
+
+section {
+    width: 99.5%;
+    margin-left: 0.3%;
+    margin-right: 0.3%;
+    margin-bottom: 2%;
+    height: auto; /* Cambia la altura a automática para que se ajuste al contenido */
+    border: 5px solid #6eb383;
+    border-radius: 10px; /* Agregar bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Agregar una sombra suave */
+    margin-top: 2%;
+    background-color: #fff; /* Cambia el fondo de la sección */
+    height: auto;
+}
+input[type="button"]{
+	cursor: pointer;
+	font-size: 13px;
+}
+input[type="text"]{
+    margin: 0px;
+    text-align: center;
+    border: none;
+	cursor:text;
+	font-size: 13px;
+    width: 100%; /* Ocupa todo el ancho de la celda */
+    padding: 5px; /* Espaciado interno para inputs */
+    border: none; /* Quita el borde predeterminado */
+    background-color: transparent; /* Fondo transparente */
+}
+input[type="text"]:hover {
+    background-color: #f2f2f2;
+    border: 1px solid #007BFF;
+}
+table{
+    width: 100%;
+	margin-left: 0%;
+	border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Borde de la tabla */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra para resaltar la tabla */
+}
+table, th, td {
+    padding: 2px; /* Espaciado interno para celdas */
+    text-align: center;
+    border: 1px solid #ccc; /* Borde para celdas */
+}
+table td{
+    font-size: 14px;
+}
+table th{
+    font-size: 15px;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+    td p span {
+        white-space: nowrap; /* Evita que el contenido se divida en varias líneas */
+        display: inline; /* Hace que los spans se muestren en línea */
+        margin-right: 5px; /* Agrega un pequeño espacio entre los apellidos y nombres */
+    }
+    .td-nom-ape{
+        text-align: left;
+    }
+
+/* Estilos para el ícono de búsqueda y subrrayar en caso de estar inactivo */
+
+.fa-search {
+    margin-right: 5px;
+}
+tr.inactivo {
+    background-color: #a49e9e; /* Cambia el fondo de la fila a gris */
+}
+p.inactivo{
+    font-style: italic;
+}
+
+
+
+#nomDocente{
+    font-family: Arial, sans-serif;
+    color: #333; /* Color de texto */
+    text-align: center; /* Alineación de texto al centro */
+    background-color: #f4f4f4; /* Color de fondo */
+    padding: 10px 0; /* Espaciado interno */
+    border-bottom: 2px solid #ccc; /* Línea inferior */
+    margin: 10px 0; /* Espaciado externo */
+    width: auto;
+    font-size: 14px;
+    margin-top: 1%;
+    margin-bottom: -2.5%;
+    margin-left: 2%;
+    max-width: 20%;
+}
+
+
+/* Estilo del botón */
+#guardarNotasBtn {
+    background: linear-gradient(135deg, rgb(0, 57, 91), rgb(110, 179, 131));
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 92%;
+    margin-bottom: 10px;
+    margin-top: 1%;
+    width: 7%;
+    text-align: center;
+}
+
+/* Estilo del botón al pasar el cursor sobre él */
+#guardarNotasBtn:hover {
+    background: linear-gradient(135deg, rgb(110, 179, 131), rgb(0, 57, 91));
+}
+
+
+/*-------BOTON MOSTRAR EVENTOS YA GUARDADOS-------------*/
+
+
+.contenedor-principal {
+    display: flex;
+    justify-content: space-between; /* Alinear los contenedores a los lados */
+}
+
+.contenedor-eventos {
+    width: 47%; /* Ancho de la sección de eventos */
+}
+
+.contenedor-desempenos {
+    width: 47%; /* Ancho de la sección de desempeños */
+}
+
+.reciente{
+    width: 73%;
+    margin-left: 3%;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 23px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.boton-eventos {
+    width: 45%;
+    margin-left: 3%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+    #tamañoD{
+        width: 50%;
+    }
+.boton-eventos i {
+    margin-left: 44px;
+    transition: transform 0.5s ease;
+}
+.boton-eventos:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+.boton-eventos:hover i {
+    transform: rotate(90deg); /* Rotar 90 grados cuando se pasa el cursor */
+}
+
+.eventos-container{
+    width: 80%;
+    background-color: #dadada; /* Color de fondo gris claro */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    animation: IzqDer 1.5s ease-in-out;
+}
+        @keyframes IzqDer {
+            from {
+                transform: translateX(-20px);
+            }
+            to {
+                
+                transform: translateX(0);
+            }
+        }
+
+.evento{
+    background-color: #fff; /* Color de fondo blanco */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    word-wrap: break-word; /* Permite que el texto se divida en varias líneas verticalmente */
+    max-width: 100%; /* Ancho máximo del div */
+    height: auto; /* Ajustar la altura automáticamente según el contenido */
+    font-size: 15px;
+}
+
+.evento:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el cursor */
+}
+
+/*FIN BOTON*/
+
+/*-------------MENSAJES DE ERROR-------------*/
+
+    .errores {
+        background-color: #f44336; /* Color de fondo */
+        color: #fff; /* Color del texto */
+        padding: 12px; /* Espaciado interno */
+        border-radius: 10px; /* Bordes redondeados */
+        font-size: 15px; /* Tamaño de fuente */
+        font-family: 'Poppins', sans-serif;
+        text-align: center; /* Centrar el texto */
+        position: fixed; /* Posición fija en la pantalla */
+        bottom: -100px; /* Inicialmente fuera de la pantalla */
+        left: 50%; /* Centrar horizontalmente */
+        transform: translateX(-50%); /* Centrar horizontalmente */
+        animation: slide-up 0.3s ease-in-out forwards; /* Animación de aparición */
+        z-index: 999; /* Capa superior */
+        height: 40px;
+    }
+
+    @keyframes slide-up {
+        to {
+            bottom: 15px; /* Posición final en la pantalla */
+        }
+    }
+
+    .errores p {
+        margin: 0; /* Eliminar margen interno */
+    }
